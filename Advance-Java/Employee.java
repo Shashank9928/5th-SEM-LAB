@@ -2,8 +2,8 @@ import java.util.Scanner;
  
 public class Employee {
  
- int empid,age;
- String name,dob;
+ int empid;
+ String name;
  float salary;
  
  public void getInput() {
@@ -15,10 +15,6 @@ public class Employee {
   name = in.next();
   System.out.print("Enter the age :: ");
   age = in.nextInt();
-  System.out.print("Enter the salary :: ");
-  salary = in.nextFloat();
-  System.out.print("Enter the dob :: ");
-  dob = in.next();
  }
  
  public void display() {
@@ -26,8 +22,6 @@ public class Employee {
   System.out.println("Employee id = " + empid);
   System.out.println("Employee name = " + name);
   System.out.println("Employee salary = " + salary);
-  System.out.println("Employee dob = " + dob);
-  System.out.println("Employee age = " + age);
  }
  
  public static void main(String[] args) {
