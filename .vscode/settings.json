@@ -1,5 +1,9 @@
 {
     "files.associations": {
-        "greddyKnap.C": "cpp"
+        "greddyKnap.C": "cpp",
+        "CLOWN.C": "cpp",
+        "BRESH.C": "cpp",
+        "MPCIRCLE.C": "cpp",
+        "DAA.C": "cpp"
     }
 }
