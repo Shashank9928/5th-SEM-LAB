@@ -13,8 +13,8 @@ public class Employee {
   empid = in.nextInt();
   System.out.print("Enter the name :: ");
   name = in.next();
-  System.out.print("Enter the age :: ");
-  age = in.nextInt();
+  System.out.print("Enter the salary :: ");
+  salary = in.nextFloat();
  }
  
  public void display() {
