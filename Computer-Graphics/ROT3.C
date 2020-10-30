@@ -52,7 +52,6 @@ int main()
 		x=x1+(75*cos(((float)i*3.14)/180));
 		y=y1+(75*sin(((float)i*3.14)/180));
 		line(x1,y1,x,y);
-		delay(25);
 	}
 	setcolor(BLUE);
 	line(x1,y1,x,y);
@@ -60,4 +59,6 @@ int main()
 	getch();
 	closegraph();
 	return 0;
+=======
+
 }
