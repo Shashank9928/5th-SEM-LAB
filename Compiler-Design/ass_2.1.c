@@ -1,44 +1,42 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main ()
+int main()
 {
-  FILE *fp, *ft;
-  char ch, nextc;
-  fp = fopen ("c_file.c", "r");
-  ft = fopen ("com_removed.c", "w");
-  if (fp == NULL)
-       printf ("Opening error");
-  if (ft == NULL)
-       printf ("Opening error");
-  nextc = fgetc (fp);
-  while (nextc != EOF)
-  {
-     ch = nextc;
-     nextc = fgetc (fp);
+    char ch, d, e,f;
+    FILE *fp1, *fp2;
 
-     if ((ch == '/') && (nextc == '*')) 
-     {
-        ch = fgetc (fp);
-        nextc = fgetc (fp);
-        while (!((ch == '*') && (nextc == '/'))) /* unroll until the end of comment*/
-        {
-          ch = nextc;
-          nextc = fgetc (fp);
+    fp1 = fopen("read_file.txt", "r");
+    fp2 = fopen("write_file.txt", "w");
+
+    if (fp1 == NULL)
+    {
+        printf("Unable to open file");
+        exit(EXIT_FAILURE);
+    }
+    ch = fgetc(fp1);
+    while(ch!=EOF){
+        if(ch=='/'){
+            ch = fgetc(fp1);
+            if(ch=='/'){
+                while(ch!='\n'){
+                    ch = fgetc(fp1);
+                }
+            }
+            else if(ch=='*'){
+                ch = fgetc(fp1);
+                while(ch!='*'){
+                    ch = fgetc(fp1);
+                }
+            }
         }
-        nextc = fgetc (fp);
-        continue;
-     }else if((ch=='/') && (nextc == '/')) // block to handle single line comment.
-     {
-        nextc = fgetc (fp);
-        while (!(nextc == '\n')){
-           nextc = fgetc (fp);
+        else{
+            printf("%c",ch);
+            fprintf(fp2,"%c",ch);
         }
-       nextc = fgetc (fp);
-       continue;
-     }
-     putc (ch, ft);
-   }
-  fclose (fp);
-  fclose (ft);
-  return 0;
- }
+        ch = fgetc(fp1);
+    }
+    fclose(fp1);
+    fclose(fp2);
+    return 0;
+}
