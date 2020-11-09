@@ -98,7 +98,7 @@ void detectTokens(char* str) {
    return;
 }
 int main(){
-   char str[100] = "float x = a + 1b; ";
+   char str[100] = "float x = a + 1b;";
    printf("The Program is : '%s' \n", str);
    printf("All Tokens are : \n");
    detectTokens(str);
